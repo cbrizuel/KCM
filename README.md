@@ -51,7 +51,7 @@ In addition to `-t <fitness_terms>`, EDA4PD take the following arguments for cus
 
 ##### Using a local ESMFold installation with EDA4PD
 
-EDA4PD uses [ESMFold](https://esmatlas.com/resources?action=fold) to predict the folding structure of each designed amino acid sequence. By default, EDA4PD will use the [official REST API](https://esmatlas.com/about#api) to request the prediction remotely. To use instead a local installation of ESMFold, we suggest running a local server using [Gunicorn](https://gunicorn.org/) and providing its URL to EDA4PD by modifying the `esmfold_url` value in the `config.py` file. The local server must receive as input a string containing an amino acid sequence, and must return as output a string containing the raw contents of the PDB file of the predicted structure. The local server's input and output must _not_ be JSON encoded. 
+EDA4PD uses [ESMFold](https://esmatlas.com/resources?action=fold) to predict the folding structure of each designed amino acid sequence. By default, EDA4PD will use the [official REST API](https://esmatlas.com/about#api) to request the prediction remotely. To use instead a local installation of ESMFold, we suggest running a local server using [Gunicorn](https://gunicorn.org/) and providing its URL to EDA4PD by modifying the `esmfold_url` value in the `config.py` file. The local server must recieve as input a string containing an amino acid sequence, and must return as output a string containing the raw contents of the PDB file of the predicted structure. The local server's input and output must _not_ be JSON encoded. 
 
 ### Reproducing the benchmark in the paper
 
