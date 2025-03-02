@@ -36,10 +36,10 @@ The KCM program was tested in a Linux machine with the following characteristics
 An Anaconda environment with all package dependecies is provided in this repository. This environment can be installed using the following command:
 
 ```
-$ conda env create -f <path to the KCM repo>/environment.yml -n KCM
+$ conda env create -f <KCM repository>/environment.yml -n KCM
 ```
 
-Remember to activate the environment afterwards:
+Don't forget to activate the environment before running the KCM program:
 
 ```
 $ conda activate KCM
