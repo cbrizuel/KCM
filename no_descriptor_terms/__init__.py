@@ -7,10 +7,13 @@ import pyrosetta
 #archivos_en_bd_selected = archivos_en_bd_selected[2:]
 #print(archivos_en_bd_selected[0:15])
 
-def run(max_generations = 1000, population_size = 5, sample_size = 3):
+def run(max_generations = 1000, 
+        population_size = 5, 
+        sample_size = 3,
+        input_folder = 'target_pdbs'):
     pyrosetta.init()
     directorio_trabajo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    ruta_carpeta_bd_selected = os.path.join(directorio_trabajo, 'target_pdbs')
+    ruta_carpeta_bd_selected = os.path.join(directorio_trabajo, input_folder)
     archivos_en_bd_selected = os.listdir(ruta_carpeta_bd_selected)
     for i in archivos_en_bd_selected:
         pdb_file_path = os.path.join(ruta_carpeta_bd_selected,i)

@@ -6,23 +6,25 @@ import pyrosetta
 #archivos_en_bd_selected = archivos_en_bd_selected[0:1]
 #archivos_en_bd_selected = archivos_en_bd_selected[700:]
 
-def run(max_generations = 1000, population_size = 5, sample_size = 5):
+def run(max_generations = 1000, 
+        population_size = 5, 
+        sample_size = 5,
+        input_folder = 'benchmark_pdbs'):
     pyrosetta.init()
     import os
-    directorio_trabajo = os.path.dirname(os.path.abspath(__file__))
-    ruta_carpeta_bd_selected = os.path.join(directorio_trabajo, 'benchmark_pdbs')
+    directorio_trabajo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    ruta_carpeta_bd_selected = os.path.join(directorio_trabajo, input_folder)
     archivos_en_bd_selected = os.listdir(ruta_carpeta_bd_selected)
     print(archivos_en_bd_selected[0:15])
     for ii in archivos_en_bd_selected:
-        #i='7spo.pdb'+
         # Borra todas las variables del espacio de nombres global
         for var in list(globals().keys()):
             if var not in ('__name__', '__doc__', '__loader__', '__package__', '__spec__','__file__','ii','pyrosetta','max_generations','population_size','sample_size'):
                 del globals()[var]
         from .Algorithm_evolutionary.algorithm_evolutionary import EDA_tres_capas,EDA_isla
         import os
-        directorio_trabajo = os.path.dirname(os.path.abspath(__file__))
-        ruta_carpeta_bd_selected = os.path.join(directorio_trabajo, 'benchmark_pdbs')
+        directorio_trabajo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        ruta_carpeta_bd_selected = os.path.join(directorio_trabajo, input_folder)
         archivos_en_bd_selected = os.listdir(ruta_carpeta_bd_selected)        
         pdb_file_path = os.path.join(ruta_carpeta_bd_selected,ii)
 

@@ -2,10 +2,13 @@ from .Algorithm_evolutionary.algorithm_evolutionary import EDA_tres_capas,EDA_is
 import os
 import pyrosetta
 
-def run(max_generations = 1000, population_size = 5, sample_size = 3):
+def run(max_generations = 1000, 
+        population_size = 5, 
+        sample_size = 3,
+        input_folder = 'target_pdbs'):
     pyrosetta.init()
     directorio_trabajo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    ruta_carpeta_bd_selected = os.path.join(directorio_trabajo, 'target_pdbs')
+    ruta_carpeta_bd_selected = os.path.join(directorio_trabajo, input_folder)
     archivos_en_bd_selected = os.listdir(ruta_carpeta_bd_selected)
     for i in archivos_en_bd_selected:
         pdb_file_path = os.path.join(ruta_carpeta_bd_selected,i)
@@ -20,10 +23,6 @@ def run(max_generations = 1000, population_size = 5, sample_size = 3):
         nueva_ruta='algo'
 
         "1 si es continuacion de una ejecucion anterior, 0 otro caso"
-        # if i=='cesarpsenergia.pdb':
-        #     continua=1
-        # else:
-        #     continua=0
         continua = 0
 
         "ultimo dato guardado de las ejecuciones anteriores, rellenar si continua=1"

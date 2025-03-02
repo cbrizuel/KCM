@@ -38,8 +38,15 @@ parser.add_argument("-s",
                     default=3,
                     help="The number of sequences to sample from each "
                          "probability distribution in the population.")
+parser.add_argument("-i", 
+                    "--input_folder", 
+                    type=str, 
+                    default="demo_pdbs", 
+                    help="The path to the folder containing the PDB files to "
+                         "be used as design targets")
 args = parser.parse_args()
 run_algorithm = algorithms[args.fitness_terms]
 run_algorithm(args.max_generations, 
               args.population_size, 
-              args.sample_size)
+              args.sample_size,
+              args.input_folder)
