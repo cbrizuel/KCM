@@ -152,7 +152,7 @@ dependencies:
   - pyrosetta=2020.10+release.46415fa
   - pysocks=1.7.1
   - pytest=7.4.3
-  - python=3.7.12
+  - python=3.7.13
   - python-blosc=1.8.3
   - python-dateutil=2.8.2
   - python-xxhash=2.0.2
