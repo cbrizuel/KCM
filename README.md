@@ -2,7 +2,7 @@
 
 This repository contains the source code for the evolutionary algorithm used in the article titled "An Evolutionary Algorithm for a Key-Cutting-Machine Approach in the Design of Proteins". This source code is provided mainly for the purpose of reproducing the results presented in said article.
 
-### Requirements
+## Requirements
 
 The KCM program requires **Python version 3.7.12** and has the following package dependencies:
 
@@ -31,7 +31,7 @@ The KCM program was tested in a Linux machine with the following characteristics
 - **Linux kernel version**: 6.6.10-76060610-generic x86_64
 - **Python version**: 3.7.12
 
-### Installation
+## Installation
 
 An Anaconda environment with all package dependecies is provided in this repository. This environment can be installed using the following command:
 
@@ -45,7 +45,7 @@ Don't forget to activate the environment before running the KCM program:
 $ conda activate KCM
 ```
 
-### Running KCM
+## Running KCM
 
 To run the KCM program in Linux, simply use the following command:
 
@@ -64,7 +64,7 @@ In addition to `-t <fitness_terms>`, KCM accepts the following arguments for cus
 - `-s <number>` or `--sample_size <number>`: sample size; i.e., the number of sequences to sample from each distribution in the population. The default value is `3`.
 - `-i <folder name>` or `--input_folder <folder name>`: the name of the local folder containing the PDB files to be used by KCM as design targets. The default value is `demo_pdbs`. Other valid values are `target_pdbs` and `benchmark_pdbs`.
 
-##### Running a demo
+### Running a demo
 
 You can check the installation by running a small demo using the following command:
 
@@ -74,11 +74,11 @@ $ python -m <KCM repository> -i demo_pdbs -t no_desc -n 3
 
 This command will run KCM on a small protein for just three generations.
 
-##### Using a local ESMFold installation with KCM
+### Using a local ESMFold installation with KCM
 
 KCM uses [ESMFold](https://esmatlas.com/resources?action=fold) to predict the folding structure of each designed amino acid sequence. By default, KCM will use the [official API](https://esmatlas.com/about#api) to request the prediction remotely. To instead use a local installation of ESMFold, we recommend running a local server using [Gunicorn](https://gunicorn.org/) and providing its URL to KCM by modifying the `esmfold_url` value in the `config.py` file. The local server must receive as input a string containing an amino acid sequence, and must return as output a string containing the raw PDB file of the predicted structure.
 
-##### Reproducing the benchmark in the article
+### Reproducing the benchmark in the article
 
 To run KCM using the 23 CATH proteins used as benchmark in the original article, use the following command:
 
@@ -86,7 +86,7 @@ To run KCM using the 23 CATH proteins used as benchmark in the original article,
 $ python -m <KCM repository> -i benchmark_pdbs -t bench
 ```
 
-##### Reproducing the IDR-2009 design in the article
+### Reproducing the IDR-2009 design in the article
 
 To run KCM over the IDR-2009 peptide as described in the original article, you need to run the following commands separetely:
 
